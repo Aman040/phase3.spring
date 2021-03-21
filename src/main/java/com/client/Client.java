@@ -9,8 +9,9 @@ public class Client {
 	public static void main(String[] args) {
 		
 		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(AppConfig.class);
-		CalculatorService cs=(CalculatorService)context.getBean("service");
-		System.out.println(cs.service(2345));
+		/*CalculatorService cs=(CalculatorService)context.getBean("service");
+		System.out.println(cs.service(2345));*/
+		context.close();
 	}
 
 }

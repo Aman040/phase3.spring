@@ -1,8 +1,10 @@
 package com.model;
 
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 @Component(value="sa")
+@Lazy
 public class SavingAccount implements InterestCalculator {
 	private int duration=5;
 	private double roi=5.8;
@@ -23,6 +25,10 @@ public class SavingAccount implements InterestCalculator {
 		
 		return amount*roi/duration;
 	}
+	public SavingAccount() {
+		System.out.println("Inside saving ");
+	}
+	
 
 	
 }
